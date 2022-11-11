@@ -1,0 +1,25 @@
+---
+import { Image } from '@astrojs/image/components';
+import avatarImage from '../images/avatar.jpg'
+
+export interface Props {
+	large?: boolean;
+	class?: string;
+	style?: string | Record<string, string>;
+}
+
+const { large = false, class: className, style } = Astro.props;
+---
+<a href="/" aria-label="Home" class={`pointer-events-auto ${className}`} style={style}>
+	<Image
+        src={avatarImage}
+        alt=""
+        sizes={large ? '4rem' : '2.25rem'}
+        class="rounded-full bg-zinc-100 object-cover dark:bg-zinc-800"
+		class:list={{
+          'h-16 w-16': large,
+		  'h-9 w-9': !large
+        }}
+        priority
+    />
+</a>
