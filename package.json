@@ -14,8 +14,7 @@
     "@astrojs/image": "^0.11.4",
     "@astrojs/preact": "^1.2.0",
     "@headlessui/react": "^1.7.4",
-    "preact": "^10.11.2",
-    "sharp": "^0.31.2"
+    "preact": "^10.11.2"
   },
   "devDependencies": {
     "@astrojs/tailwind": "^2.1.2",
