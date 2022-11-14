@@ -1,9 +1,9 @@
 ---
 import Container from "./Container.astro";
-import ModeToggle from "./ModeToggle";
 import AvatarContainer from "./AvatarContainer.astro";
 import Avatar from "./Avatar.astro";
 import DesktopNavigation from "./DesktopNavigation.astro";
+import ModeToggle from "./ModeToggle.astro";
 
 export interface Props {
 	isHomePage?: boolean;
@@ -76,7 +76,7 @@ const { isHomePage = false } = Astro.props;
 				</div>
 				<div class="flex justify-end md:flex-1">
 					<div class="pointer-events-auto">
-						<ModeToggle client:idle />
+						<ModeToggle />
 					</div>
 				</div>
 			</div>

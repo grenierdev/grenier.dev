@@ -7,7 +7,7 @@ export interface Props {
 	style?: string | Record<string, string>;
 }
 
-const { class: className, style } = Astro.props;
+const { class: className = "", style } = Astro.props;
 ---
 <OuterContainer class={className} style={style}>
 	<InnerContainer>

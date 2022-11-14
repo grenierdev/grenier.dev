@@ -1,6 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import { getArticles, getPublished, getSorted } from "../contents";
+
+const articles = getPublished(getSorted(getArticles())).slice(0, 3);
 ---
 
 <Layout isHomePage={true}>
@@ -12,7 +16,8 @@ import Container from "../components/Container.astro";
 				I'm Michael, software architect, hacker, and awesome dad.
 			</h1>
 			<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-				I write about software, programming, hacking and my side projects.
+				I write about software, programming, hacking and my side
+				projects.
 			</p>
 			<div class="mt-6 flex gap-6">
 				<a
@@ -61,6 +66,27 @@ import Container from "../components/Container.astro";
 						></path>
 					</svg>
 				</a>
+			</div>
+		</div>
+	</Container>
+	<Container class="mt-24 md:mt-28">
+		<div
+			class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
+		>
+			<div class="flex flex-col gap-16">
+				{
+					articles.map((article) => (
+						<ArticleCard
+							href={article.url!}
+							title={article.frontmatter.title}
+							date={article.frontmatter.publishDate}
+						/>
+					))
+				}
+			</div>
+			<div class="space-y-10 lg:pl-16 xl:pl-24">
+				<!-- <Newsletter />
+            <Resume /> -->
 			</div>
 		</div>
 	</Container>

@@ -8,7 +8,7 @@ export interface Props {
 	style?: string | Record<string, string>;
 }
 
-const { large = false, class: className, style } = Astro.props;
+const { large = false, class: className = "", style } = Astro.props;
 ---
 <a href="/" aria-label="Home" class={`pointer-events-auto ${className}`} style={style}>
 	<Image

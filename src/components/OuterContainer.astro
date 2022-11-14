@@ -4,7 +4,7 @@ export interface Props {
 	style?: string | Record<string, string>;
 }
 
-const { class: className, style } = Astro.props;
+const { class: className = "", style } = Astro.props;
 ---
 <div class={`sm:px-8 ${className}`} style={style}>
 	<div class="mx-auto max-w-7xl lg:px-8">
