@@ -1,0 +1,72 @@
+---
+import SimpleLayout from "../layouts/SimpleLayout.astro";
+import { Card } from "../components/Card";
+import Section from "../components/Section.astro";
+---
+
+<SimpleLayout
+	title="Certifications I've acquired or working toward to complete"
+	intro="I've learned many skills on my journey, only a few worth a certification."
+>
+	<div class="space-y-20">
+		<Section title="Professionnals">
+			<div class="space-y-16">
+				<Card as="article">
+					<Card.Title as="h3" href="https://academy.hackthebox.com/preview/certifications/htb-certified-penetration-testing-specialist/">
+						HackTheBox Certified Penetration Testing Specialist
+					</Card.Title>
+					<Card.Eyebrow decorate>Pending</Card.Eyebrow>
+					<Card.Description>
+						HTB Certified Penetration Testing Specialist (HTB CPTS) is a highly hands-on certification that assesses the candidates’ penetration testing skills.
+					</Card.Description>
+					<Card.Cta>View certification</Card.Cta>
+				</Card>
+				<Card as="article">
+					<Card.Title
+						as="h3"
+						href="https://www.credential.net/73c4cb55-bc82-42c4-9dee-b4ea7575eef9"
+					>
+						Offensive Security Certified Professionnal
+					</Card.Title>
+					<Card.Eyebrow decorate>Obtained in 2022</Card.Eyebrow>
+					<Card.Description>
+						An OSCP has demonstrated the ability to use persistence, creativity, and perceptiveness to identify vulnerabilities and execute organized attacks under tight time constraints.
+					</Card.Description>
+					<Card.Cta>Verify online</Card.Cta>
+				</Card>
+				<Card as="article">
+					<Card.Title as="h3" href="https://www.zend-zce.com/en/yellow-pages/ZEND008528">
+						Zend Certified Engineer
+					</Card.Title>
+					<Card.Eyebrow decorate>Obtained in 2008</Card.Eyebrow>
+					<Card.Description>
+						The Zend Certified Engineer is an industry-wide standard that recognizes PHP expertise and is a measure of distinction that employers use to evaluate prospective employees.
+					</Card.Description>
+					<Card.Cta>Verify online</Card.Cta>
+				</Card>
+			</div>
+		</Section>
+		<Section title="Educations">
+			<div class="space-y-16">
+				<Card as="article">
+					<Card.Title as="h3" href="https://www.uqat.ca/etudes/creation-et-nouveaux-medias/baccalaureat-en-creation-numerique/">
+						Bachelor's degree in interactive multimedia
+					</Card.Title>
+					<Card.Eyebrow decorate>Obtained in 2010</Card.Eyebrow>
+					<Card.Description>
+						This program is aimed at passionate and curious people wishing to broaden their horizons on many lines of thought and creation, while developing specific skills in interactive multimedia.
+					</Card.Description>
+					<Card.Cta>Visit program's micro-site</Card.Cta>
+				</Card>
+				<Card as="article">
+					<Card.Title as="h3" href="https://www.cegepat.qc.ca/techniques-informatique/">College degree in computer science</Card.Title>
+					<Card.Eyebrow decorate>Obtained in 2006</Card.Eyebrow>
+					<Card.Description>
+						The Computer Technology program aims to train computer technicians who will practice their profession in the fields of application development and network administration computers.
+					</Card.Description>
+					<Card.Cta>Visit program's micro-site</Card.Cta>
+				</Card>
+			</div>
+		</Section>
+	</div>
+</SimpleLayout>

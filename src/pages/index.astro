@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
-import ArticleCard from "../components/ArticleCard.astro";
+import { Card } from "../components/Card";
 import { getArticles, getPublished, getSorted } from "../contents";
 
 const articles = getPublished(getSorted(getArticles())).slice(0, 3);
@@ -13,7 +13,7 @@ const articles = getPublished(getSorted(getArticles())).slice(0, 3);
 			<h1
 				class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
 			>
-				I'm Michael, software architect, hacker, and awesome dad.
+				I'm Michael, software architect, hacker, and awesome dad
 			</h1>
 			<p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
 				I write about software, programming, hacking and my side
@@ -54,7 +54,7 @@ const articles = getPublished(getSorted(getArticles())).slice(0, 3);
 				</a>
 				<a
 					class="group -m-1 p-1"
-					href="https://twitter.com"
+					href="https://www.linkedin.com/in/greniermichael/"
 					aria-label="Follow on LinkedIn"
 				>
 					<svg
@@ -76,11 +76,22 @@ const articles = getPublished(getSorted(getArticles())).slice(0, 3);
 			<div class="flex flex-col gap-16">
 				{
 					articles.map((article) => (
-						<ArticleCard
-							href={article.url!}
-							title={article.frontmatter.title}
-							date={article.frontmatter.publishDate}
-						/>
+						<Card className="md:col-span-3">
+							<Card.Title href={article.url}>
+								{article.frontmatter.title}
+							</Card.Title>
+							<Card.Eyebrow
+								as="time"
+								dateTime={article.frontmatter.publishDate}
+								decorate
+							>
+								{article.frontmatter.publishDate}
+							</Card.Eyebrow>
+							<Card.Description>
+								{article.frontmatter.description}
+							</Card.Description>
+							<Card.Cta>Read article</Card.Cta>
+						</Card>
 					))
 				}
 			</div>
