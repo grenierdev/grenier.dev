@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
-import { getArticles, getPublished, getSorted } from "../contents";
+import { getArticles, getSorted } from "../contents";
 
-const articles = getPublished(getSorted(getArticles()));
+const articles = getSorted(getArticles());
 
 export function get() {
 	return rss({
