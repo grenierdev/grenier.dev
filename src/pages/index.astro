@@ -2,9 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/Container.astro";
 import { Card } from "../components/Card";
-import { getArticles, getPublished, getSorted } from "../contents";
+import { getArticles, getSorted } from "../contents";
 
-const articles = getPublished(getSorted(getArticles())).slice(0, 3);
+const articles = getSorted(getArticles()).slice(0, 3);
 ---
 
 <Layout isHomePage={true}>

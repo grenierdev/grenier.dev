@@ -8,5 +8,3 @@ export function getArticles() {
 }
 
 export const getSorted = (articles: ReturnType<typeof getArticles>) => [...articles].sort((a, b) => new Date(a.frontmatter.publishDate).getTime() - new Date(b.frontmatter.publishDate).getTime())
-
-export const getPublished = (articles: ReturnType<typeof getArticles>) => articles.filter(({ frontmatter }) => !(frontmatter.draft ?? true));

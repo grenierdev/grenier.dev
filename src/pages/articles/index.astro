@@ -1,9 +1,9 @@
 ---
 import SimpleLayout from "../../layouts/SimpleLayout.astro";
 import { Card } from "../../components/Card";
-import { getArticles, getSorted, getPublished } from "../../contents";
+import { getArticles, getSorted } from "../../contents";
 
-const articles = getSorted(getPublished(getArticles()));
+const articles = getSorted(getArticles());
 ---
 
 <SimpleLayout
