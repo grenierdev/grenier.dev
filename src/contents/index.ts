@@ -7,4 +7,4 @@ export function getArticles() {
 	return Object.values(articles);
 }
 
-export const getSorted = (articles: ReturnType<typeof getArticles>) => [...articles].sort((a, b) => new Date(a.frontmatter.publishDate).getTime() - new Date(b.frontmatter.publishDate).getTime())
+export const getSorted = (articles: ReturnType<typeof getArticles>) => [...articles].sort((a, b) => new Date(b.frontmatter.publishDate).getTime() - new Date(a.frontmatter.publishDate).getTime())
